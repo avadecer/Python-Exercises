@@ -1,0 +1,76 @@
+# Problem 01
+def strcmp(str1, str2):
+    if str1 == str2:
+        print('Equal')
+    if str1 > str2:
+        print('Positive')
+    if str1 < str2:
+        print('Negative')
+
+
+print('***********************')
+print('STRING COMPARE')
+print('***********************')
+
+string1 = input('Enter a first str1 (str1): ')
+string2 = input('Enter a second str1 (str2): ')
+
+strcmp(string1, string2)
+
+# Problem 02
+def strcpy(str2):
+
+    str3 = str2[:]
+    print('new string value for str1: ', str3)
+
+
+print('***********************')
+print('STRING COPY')
+print('***********************')
+
+string1 = input('Enter a first str1 (str1): ')
+string2 = input('Enter a second str1 (str2): ')
+
+strcpy(string2)
+
+# Problem 03
+def strcat(str1, str2):
+
+    cat = str1 + str2
+    print('new string value for str1: ', cat)
+
+print('***********************')
+print('STRING CONCATENATION')
+print('***********************')
+
+string1 = input('Enter a first str1 (str1): ')
+string2 = input('Enter a second str1 (str2): ')
+
+strcat(string1, string2)
+
+#Problem 04
+def ispalindrome(str1):
+    str1 = str1.replace(' ', '')
+    if len(str1) < 2:
+        return True
+    if str1[0] != str1[-1]:
+        return False
+    return ispalindrome(str1[1:-1])
+
+
+print('***********************')
+print('PALINDROME')
+print('***********************')
+word = input('Enter a word: ')
+print(ispalindrome(word))
+
+if ispalindrome(word):
+    print(word.strip() + ' is a palindrome ')
+if not ispalindrome(word):
+    print(word.strip() + ' is not a palindrome')
+
+# Problem 05
+str1 = input('Enter some string: ')
+capt_result = str1.title()
+
+print(capt_result)

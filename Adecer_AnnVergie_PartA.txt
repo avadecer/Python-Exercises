@@ -1,0 +1,65 @@
+# Problem 01
+def addition():
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    result = x + y
+    print("The sum is", result)
+
+
+def subtraction():
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    result = x - y
+    print("The difference is", result)
+
+
+def multiplication():
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    result = x * y
+    print("The product is", result)
+
+
+def division():
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    try:
+        result = x / y
+        print("The quotient is", result)
+    except ZeroDivisionError:
+        print("Undefined!")
+
+
+print("*****************************")
+print("MENU")
+print("*****************************")
+
+
+print("[a] - addition")
+print("[s] - subtraction")
+print("[m] - multiplication")
+print("[d] - division")
+print("[x] - exit")
+print("----------------------------")
+
+operation = input("Enter your choice: ")
+print("----------------------------")
+
+if operation == "a":
+    print("ADDITION")
+    addition()
+
+if operation == "s":
+    print("SUBTRACTION")
+    subtraction()
+
+if operation == "m":
+    print("MULTIPLICATION")
+    multiplication()
+
+if operation == "d":
+    print("DIVISION")
+    division()
+
+if operation == "x":
+    print("Thank you!")

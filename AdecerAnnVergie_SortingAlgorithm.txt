@@ -1,0 +1,126 @@
+def selectionsort(lst_sort):
+    for i in range(len(lst_sort)):
+        smallestval = min(lst_sort[i:])
+        smallestindex = lst_sort.index(smallestval)
+        lst_sort[i], lst_sort[smallestindex] = lst_sort[smallestindex], lst_sort[i]
+        print('\n', i + 1, lst_sort)
+
+
+def insertionsort(lst_sort):
+    for i in range(1, len(lst_sort)):
+        element = lst_sort[i]
+        j = i - 1
+        while j >= 0 and element < lst_sort[j]:
+            lst_sort[j + 1] = lst_sort[j]
+            j -= 1
+        lst_sort[j + 1] = element
+        print('\n', i, lst_sort)
+
+
+def bubblesort(lst_sort):
+    for i in range(len(lst_sort)):
+        for j in range(len(lst_sort) - 1):
+            if lst_sort[j] > lst_sort[j + 1]:
+                lst_sort[j], lst_sort[j + 1] = lst_sort[j + 1], lst_sort[j]
+                print('\n', i + 1, lst_sort)
+
+
+def quicksort(lst_sort, low_index, high_index):
+    if high_index - low_index > 0:
+        pivot = prep(lst_sort, low_index, high_index)
+        quicksort(lst_sort, low_index, pivot - 1)
+        quicksort(lst_sort, pivot + 1, high_index)
+
+
+def prep(lst_sort, low_index, high_index):
+    div = low_index
+    pivot = high_index
+
+    for i in range(low_index, high_index):
+        if lst_sort[i] < lst_sort[pivot]:
+            lst_sort[i], lst_sort[div] = lst_sort[div], lst_sort[i]
+            div += 1
+    print('\n', lst_sort)
+
+    lst_sort[pivot], lst_sort[div] = lst_sort[div], lst_sort[pivot]
+
+    print('\n', lst_sort)
+
+    return div
+
+
+def mergesort(lst_sort):
+    print('\nsplitting', lst_sort)
+    if len(lst_sort) > 1:
+        middle = len(lst_sort) // 2
+        leftside = lst_sort[:middle]
+        rightside = lst_sort[middle:]
+
+        mergesort(leftside)
+        mergesort(rightside)
+
+        i = 0
+        j = 0
+        k = 0
+
+        while i < len(leftside) and j < len(rightside):
+            if leftside[i] < rightside[j]:
+                lst_sort[k] = leftside[i]
+                i = i + 1
+            else:
+                lst_sort[k] = rightside[j]
+                j = j + 1
+                k = k + 1
+
+            while i < len(leftside):
+                lst_sort[k] = leftside[i]
+                i = i + 1
+                k = k + 1
+
+            while j < len(rightside):
+                lst_sort[k] = rightside[j]
+                j = j + 1
+                k = k + 1
+                print('\nmerging', lst_sort)
+
+
+x1 = int(input("Enter 1st value: "))
+x2 = int(input("Enter 2nd value: "))
+x3 = int(input("Enter 3rd value: "))
+x4 = int(input("Enter 4th value: "))
+x5 = int(input("Enter 5th value: "))
+
+val = [x1, x2, x3, x4, x5]
+print("\nThe 5 values are:", val)
+
+print("The Sorting Techniques: ")
+print("1. Selection Sort")
+print("2. Insertion Sort")
+print("3. Bubble Sort")
+print("4. Quick Sort")
+print("5. Merge Sort")
+
+technique = input("\nSelect sorting technique: ")
+
+if technique == '1':
+    selectionsort(val)
+    print('\nThe sorted list: ', val)
+
+
+if technique == '2':
+    insertionsort(val)
+    print('\nThe sorted list: ', val)
+
+if technique == '3':
+    bubblesort(val)
+    print('\nThe sorted list: ', val)
+
+if technique == '4':
+    low = 0
+    high = len(val) - 1
+    quicksort(val, low, high)
+    print('\nThe sorted list: ', val)
+
+if technique == '5':
+    mergesort(val)
+    print('\nThe sorted list: ', val)

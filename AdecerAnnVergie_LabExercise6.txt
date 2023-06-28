@@ -1,0 +1,25 @@
+# 1.account
+# 2.account
+# 3.account
+# 4.account
+# 5.account
+# 6.accountBalance
+# 7.doubleInterest
+
+a = int(input("Enter account balance: Php "))
+b = int(input("Enter account interest: "))
+c = int(input("Enter the number of months until maturity: "))
+
+interestOld = ((a * b/100)/c) * 12
+balanceOld = interestOld + a
+
+interestNew = (balanceOld * 2 * b/100)
+balanceNew = balanceOld + interestNew
+
+print("\nOld Account")
+print("When your CD matures in: ", c, " months.")
+print("it will have a balance of Php", balanceOld)
+
+print("\nNew Account")
+print("When your CD matures in: ", c, " months.")
+print("it will have a balance of Php", balanceNew)

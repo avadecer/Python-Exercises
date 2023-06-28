@@ -1,0 +1,53 @@
+import random
+import sys
+
+numTries = 0
+
+print('Welcome to the guessing number game.')
+print('-------------------------------------')
+player = input('What is your name? ')
+
+number = random.randint(1, 50)
+print('\nHello ' + player + ', Can you guess the number that I am thinking between 1 and 50?' )
+print('Type "yes" if you want to proceed.\nType "no" if you want to exit the game.')
+
+playerAnswer = input()
+
+if playerAnswer == "yes":
+    print('Great! Get ready.')
+if playerAnswer == "no":
+    print('\nThank you for being here! Come back again next time.')
+    quit()
+
+while numTries < 10:
+
+    userGuess = input('You have 10 chances. Take a guess: ')
+
+    try:
+        guess = int(userGuess)
+    except ValueError:
+        print('\nEnter a valid integer.')
+        print('Restart the game. Thank you!')
+        sys.exit()
+
+    numTries = numTries + 1
+
+    if guess < number:
+        print('Higher')
+
+    if guess > number:
+        print('Lower')
+
+    if guess == number:
+        break
+
+if guess == number:
+    numTries = str(numTries)
+    print('\nGreat job ' + player + '! You got the correct answer in ' + numTries + ' guesses!')
+
+if guess != number:
+    number = str(number)
+    print('Sorry. You ran out of chances! Better luck next time.')
+    print('\nThe number that I was thinking is ' + number)
+
+

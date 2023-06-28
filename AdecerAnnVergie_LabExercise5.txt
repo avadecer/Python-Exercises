@@ -1,0 +1,254 @@
+from tabulate import tabulate
+
+# Problem 01
+
+print("Enter Student Record:")
+
+
+class Student:
+    id = 0
+    name = ''
+    quizzes = [0, 0, 0]
+
+
+def main():
+    student = Student()
+
+    student.id = int(input("ID: "))
+    student.name = input("Name: ")
+    student.quizzes[0] = int(input("Quiz 1: "))
+    student.quizzes[1] = int(input("Quiz 2: "))
+    student.quizzes[2] = int(input("Quiz 3: "))
+    print(student.quizzes)
+    user_average = (student.quizzes[0] + student.quizzes[1] + student.quizzes[2])/3
+
+    print("\nStudent Record:")
+    print("ID: ", student.id)
+    print("Name: ", student.name)
+    print("Grades: ", user_average)
+
+    if user_average >= 75:
+        remarks = 'Passed'
+    else:
+        remarks = 'Failed'
+    print('Remarks: ', remarks)
+
+
+if __name__ == main():
+    main()
+
+# Problem 02
+
+print("Enter Student Record: ")
+
+print('Student 1')
+s_id1 = int(input("ID: "))
+s_name1 = input("Name: ")
+s_quizzes1 = input("Enter 3 quizzes grades: ")
+s_list1 = s_quizzes1.split()
+
+for i in range(len(s_list1)):
+    s_list1[i] = int(s_list1[i])
+
+s_average1 = sum(s_list1) / len(s_list1)
+
+if s_average1 >= 75:
+    remarks1 = 'Passed'
+else:
+    remarks1 = 'Failed'
+
+print('\nStudent 2')
+s_id2 = int(input("ID: "))
+s_name2 = input("Name: ")
+s_quizzes2 = input("Enter 3 quizzes grades: ")
+s_list2 = s_quizzes2.split()
+
+for i in range(len(s_list2)):
+    s_list2[i] = int(s_list2[i])
+
+s_average2 = sum(s_list2) / len(s_list2)
+
+if s_average2 >= 75:
+    remarks2 = 'Passed'
+else:
+    remarks2 = 'Failed'
+
+
+print('\nStudent 3')
+s_id3 = int(input("ID: "))
+s_name3 = input("Name: ")
+s_quizzes3 = input("Enter 3 quizzes grades: ")
+s_list3 = s_quizzes3.split()
+
+for i in range(len(s_list3)):
+    s_list3[i] = int(s_list3[i])
+
+s_average3 = sum(s_list3) / len(s_list3)
+
+if s_average3 >= 75:
+    remarks3 = 'Passed'
+else:
+    remarks3 = 'Failed'
+
+
+print('\nStudent 4')
+s_id4 = int(input("ID: "))
+s_name4 = input("Name: ")
+s_quizzes4 = input("Enter 3 quizzes grades: ")
+s_list4 = s_quizzes4.split()
+
+for i in range(len(s_list4)):
+    s_list4[i] = int(s_list4[i])
+
+s_average4 = sum(s_list4) / len(s_list4)
+
+if s_average4 >= 75:
+    remarks4 = 'Passed'
+else:
+    remarks4 = 'Failed'
+
+
+print('\nStudent 5')
+s_id5 = int(input("ID: "))
+s_name5 = input("Name: ")
+s_quizzes5 = input("Enter 3 quizzes grades: ")
+s_list5 = s_quizzes5.split()
+
+for i in range(len(s_list5)):
+    s_list5[i] = int(s_list5[i])
+
+s_average5 = sum(s_list5) / len(s_list5)
+
+if s_average5 >= 75:
+    remarks5 = 'Passed'
+else:
+    remarks5 = 'Failed'
+
+s_data = [["No.", "Student No.", "Name", "Grade", "Remark"],
+          [1, s_id1, s_name1, s_average1, remarks1],
+          [2, s_id2, s_name2, s_average2, remarks2],
+          [3, s_id3, s_name3, s_average3, remarks3],
+          [4, s_id4, s_name4, s_average4, remarks4],
+          [5, s_id5, s_name5, s_average5, remarks5]]
+
+print(tabulate(s_data))
+
+# Problem 03
+
+from tabulate import tabulate
+
+print("Enter 3 customers\n")
+
+print('CUSTOMER INFORMATION 1')
+c_Firstname1 = input("First name: ")
+c_Lastname1 = input("Last name: ")
+c_num = input("Contact No: ")
+
+print("Order Date:")
+
+o_day = input("Day: ")
+o_month = input("Month: ")
+o_year = input("Year: ")
+
+print("Enter 3 items")
+i_id1 = int(input("ID: "))
+i_name1 = input("Name: ")
+i_price1 = int(input("Price: "))
+i_quantity1 = int(input("Quantity: "))
+i_id2 = int(input("ID: "))
+i_name2 = input("Name: ")
+i_price2 = int(input("Price: "))
+i_quantity2 = int(input("Quantity: "))
+i_id3 = int(input("ID: "))
+i_name3 = input("Name: ")
+i_price3 = int(input("Price: "))
+i_quantity3 = int(input("Quantity: "))
+
+p_item1 = i_quantity1 * i_price1
+p_item2 = i_quantity2 * i_price2
+p_item3 = i_quantity3 * i_price3
+
+p_total1 = p_item1 + p_item2 + p_item3
+
+print('\nCUSTOMER INFORMATION 2')
+c2_Firstname1 = input("First name: ")
+c2_Lastname1 = input("Last name: ")
+c2_num = input("Contact No: ")
+
+print("Order Date:")
+
+o2_day = input("Day: ")
+o2_month = input("Month: ")
+o2_year = input("Year: ")
+
+print("Enter 3 items")
+i2_id1 = int(input("ID: "))
+i2_name1 = input("Name: ")
+i2_price1 = int(input("Price: "))
+i2_quantity1 = int(input("Quantity: "))
+i2_id2 = int(input("ID: "))
+i2_name2 = input("Name: ")
+i2_price2 = int(input("Price: "))
+i2_quantity2 = int(input("Quantity: "))
+i2_id3 = int(input("ID: "))
+i2_name3 = input("Name: ")
+i2_price3 = int(input("Price: "))
+i2_quantity3 = int(input("Quantity: "))
+
+p2_item1 = i_quantity1 * i_price1
+p2_item2 = i_quantity2 * i_price2
+p2_item3 = i_quantity3 * i_price3
+
+p2_total1 = p2_item1 + p2_item2 + p2_item3
+
+print('\nCUSTOMER INFORMATION 3')
+c3_Firstname1 = input("First name: ")
+c3_Lastname1 = input("Last name: ")
+c3_num = input("Contact No: ")
+
+print("Order Date:")
+
+o3_day = input("Day: ")
+o3_month = input("Month: ")
+o3_year = input("Year: ")
+
+print("Enter 3 items")
+i3_id1 = int(input("ID: "))
+i3_name1 = input("Name: ")
+i3_price1 = int(input("Price: "))
+i3_quantity1 = int(input("Quantity: "))
+i3_id2 = int(input("ID: "))
+i3_name2 = input("Name: ")
+i3_price2 = int(input("Price: "))
+i3_quantity2 = int(input("Quantity: "))
+i3_id3 = int(input("ID: "))
+i3_name3 = input("Name: ")
+i3_price3 = int(input("Price: "))
+i3_quantity3 = int(input("Quantity: "))
+
+p3_item1 = i_quantity1 * i_price1
+p3_item2 = i_quantity2 * i_price2
+p3_item3 = i_quantity3 * i_price3
+
+p3_total1 = p3_item1 + p3_item2 + p3_item3
+
+
+c_data = [["#", "Customer Name", "Order Date", "Items", "Price", "Quantity"],
+          [1, c_Lastname1 + ',' + c_Firstname1, o_month + '/' + o_day + '/' + o_year, i_name1, i_price1, i_quantity1],
+          ['', '', '', i_name2, i_price2, i_quantity2], ['', '', '', i_name3, i_price3, i_quantity3],
+          ['', '', '', 'TOTAL PRICE: ', '', p_total1],
+
+          ["#", "Customer Name", "Order Date", "Items", "Price", "Quantity"],
+          [2, c2_Lastname1 + ',' + c2_Firstname1, o2_month + '/' + o2_day + '/' + o2_year, i2_name1, i2_price1, i2_quantity1],
+          ['', '', '', i2_name2, i2_price2, i2_quantity2], ['', '', '', i2_name3, i2_price3, i2_quantity3],
+          ['', '', '', 'TOTAL PRICE: ', '', p2_total1],
+
+          ["#", "Customer Name", "Order Date", "Items", "Price", "Quantity"],
+          [3, c3_Lastname1 + ',' + c3_Firstname1, o3_month + '/' + o3_day + '/' + o3_year, i3_name1, i3_price1, i3_quantity1],
+          ['', '', '', i3_name2, i3_price2, i3_quantity2], ['', '', '', i3_name3, i3_price3, i3_quantity3],
+          ['', '', '', 'TOTAL PRICE: ', '', p3_total1]]
+
+print("\nSUMMARY REPORT")
+print(tabulate(c_data))
+
+

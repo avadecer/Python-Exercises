@@ -1,0 +1,111 @@
+# Problem 03
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+n = int(input("Enter a number: "))
+print("The factorial of", + n, "is", factorial(n))
+
+
+# Problem 04
+def addition(x, y):
+    result = x + y
+    return result
+
+
+def subtraction(x, y):
+    result = x - y
+    return result
+
+
+def multiplication(x, y):
+    result = x * y
+    return result
+
+
+def division(x, y):
+    try:
+        result = x / y
+        return result
+    except ZeroDivisionError:
+        print("Undefined!")
+        return
+
+
+print("\nARITHMETIC CALCULATOR")
+print("-----------------------")
+print("[1] - Addition")
+print("[2] - Subtraction")
+print("[3] - Multiplication")
+print("[4] - Division")
+print("-----------------------")
+
+choice = int(input("Enter your choice: "))
+
+if choice == 1:
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    print("The sum is", addition(x, y))
+
+if choice == 2:
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    print("The difference is", subtraction(x, y))
+
+if choice == 3:
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    print("The product is", multiplication(x, y))
+
+if choice == 4:
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    print("The quotient is", division(x, y))
+
+print("\n")
+
+# Problem 05
+
+from multipledispatch import dispatch
+
+@dispatch()
+def linechar():
+    print("********************")
+
+
+@dispatch(str)
+def linechar(ch):
+    for i in range(20):
+        print(ch,end="")
+    print("")
+
+
+@dispatch(int)
+def linechar(count):
+    for i in range(count):
+        print("*", end="")
+    print("")
+
+
+@dispatch(str,int)
+def linechar(ch, count):
+    for i in range(count):
+        print(ch, end="")
+    print("")
+
+
+def main():
+    linechar()
+    linechar('@')
+    linechar(10)
+    linechar('#', 15)
+
+
+if __name__=="__main__":
+    main()
+
+
+

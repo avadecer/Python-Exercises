@@ -1,0 +1,63 @@
+# Problem 02
+import math
+
+
+def area_square(s):
+    area = s * s
+    return area
+
+
+def area_rectangle(l, w):
+    area = l * w
+    return area
+
+
+def area_triangle(b, w):
+    result = (b * w) / 2
+    return result
+
+
+def area_circle(r):
+    result = math.pi*r*r
+    return result
+
+
+print("*****************************")
+print("MENU")
+print("*****************************")
+
+
+print("[1] - Area of square")
+print("[2] - Area of rectangle")
+print("[3] - Area of triangle")
+print("[4] - Area of circle")
+print("[5] - exit")
+print("----------------------------")
+
+operation = input("Enter your choice: ")
+print("----------------------------")
+
+if operation == "1":
+    print("AREA OF SQUARE")
+    s = int(input("Enter the side of the square: "))
+    print("The area is", area_square(s), end=" sq. units")
+
+if operation == "2":
+    print("AREA OF RECTANGLE")
+    l = int(input("Enter the length of the rectangle: "))
+    w = int(input("Enter the width of the rectangle: "))
+    print("The area is", area_rectangle(l, w), end=" sq. units")
+
+if operation == "3":
+    print("AREA OF TRIANGLE")
+    b = int(input("Enter the base of the height: "))
+    w = int(input("Enter the width of the height: "))
+    print("The area is", area_triangle(b, w), end=" sq. units")
+
+if operation == "4":
+    print("AREA OF CIRCLE")
+    r = int(input("Enter the radius: "))
+    print("The area is", area_circle(r), end=" sq. units")
+
+if operation == "5":
+    print("Thank you!")

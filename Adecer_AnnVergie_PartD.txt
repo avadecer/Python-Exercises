@@ -1,0 +1,56 @@
+# Problem 06
+from array import array
+
+a = array('i', (int(i) for i in input("Enter 10 numbers: ").split()))
+s = 0
+
+for i in a:
+    if i % 2 != 0:
+        s = s + i
+
+print("Sum of all odd elements is", s)
+
+# Problem 07
+
+class Overload:
+    def add(self, a=0, b=0, c=0, d=0):
+        return a + b + c + d
+
+
+obj = Overload()
+
+print("Enter two numbers: ", end="")
+a, b = map(int, input().split())
+print("the sum is: ", obj.add(a, b))
+
+print("Enter three numbers: ", end="")
+a, b, c = map(int, input().split())
+print("the sum is: ", obj.add(a, b, c))
+
+print("Enter four numbers: ", end="")
+a, b, c, d = map(int, input().split())
+print("the sum is: ", obj.add(a, b, c, d))
+
+# Problem 08
+
+
+def substring():
+    string = input("Original string value: ")
+    length = len(string)
+    print("String length:", length)
+
+    start_index = input("Enter start index: ")
+    st_index = int(start_index)
+    end_index = input("Enter end index: ")
+    en_index = int(end_index)
+
+    print("function substring(str)\n", string)
+    print("function substring(str, " + start_index + "): \n", string[st_index:])
+    print("function substring(str, " + start_index + ", " + end_index + "): \n", string[st_index:en_index])
+
+    return substring()
+
+
+print(substring())
+
+

@@ -1,0 +1,101 @@
+# Problem 1
+def strcpy(str2):
+
+    str1 = str2[:]
+    return str1
+
+
+print('***********************')
+print('STRING COPY')
+print('***********************')
+
+string1 = input('Enter a first word (str1): ')
+string2 = input('Enter a second word (str2): ')
+
+a = strcpy(string1)
+print("string value for str1: ", a)
+
+b = strcpy(string2)
+print("string value for str2: ", b)
+
+print('***********************')
+print('STRING COPY')
+print('***********************')
+
+string1 = "Elephant"
+string2 = "Lion"
+
+a = strcpy(string1)
+print("string value for str1: ", a)
+
+b = strcpy(string2)
+print("string value for str2: ", b)
+
+
+# Problem 2
+def strcmp(str1, str2):
+    if str1 == str2:
+        print('strings are the same')
+    if str1 > str2:
+        print('second string is less than the first string')
+    if str1 < str2:
+        print('second string is greater than the first string')
+
+
+print('***********************')
+print('STRING COMPARE')
+print('***********************')
+
+string1 = input('Enter a first str1 (str1): ')
+string2 = input('Enter a second str1 (str2): ')
+
+strcmp(string1, string2)
+
+
+# Problem 3
+def strcat(str1, str2):
+
+    cat = str1 + str2
+    print('new string value: ', cat)
+
+
+print('***********************')
+print('STRING CONCATENATION')
+print('***********************')
+
+string1 = input('Enter the first word: ')
+string2 = input('Enter the second word:')
+
+strcat(string1, string2)
+
+
+# Problem 4
+def strlen(string):
+    count = 0
+    for i in string:
+        count += 1
+    return count
+
+
+print('***********************')
+print('STRING LENGTH')
+print('***********************')
+
+string = input("Enter a word: ")
+print(strlen(string))
+
+
+# Problem 5
+def reverse(string):
+    string = string[::-1]
+    return string
+
+
+print('***********************')
+print('STRING REVERSE')
+print('***********************')
+
+string = input("Enter a word: ")
+print("The original string  is : ", string)
+print("The reversed string is: ", reverse(string))
+

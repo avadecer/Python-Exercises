@@ -1,0 +1,17 @@
+num = int(input('Enter a decimal number: '))
+
+if num < 0:
+    print('Enter only positive values.')
+
+num = int(input('Enter a decimal number: '))
+
+binval = []
+while (num != 0):
+    remainder = num % 2
+    binval.append(remainder)
+    num = num//2
+
+binval.reverse()
+print('Binary equivalent: ', binval)
+
+
